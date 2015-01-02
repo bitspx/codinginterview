@@ -8,7 +8,9 @@
 */
 public class N51DuplicatedNbInArray {
   public static void main(String[] args) {
-
+    int[] array = {2, 3, 1, 0, 2, 5, 3};
+    findDuplicatedNb(array);
+    findDuplicate(array);
   }
   public static int findDuplicatedNb(int[] array) {
     if(array == null || array.length == 0) {
@@ -20,6 +22,7 @@ public class N51DuplicatedNbInArray {
         appears.put(array[i], 1);
       }
       else {
+        System.out.println("Found duplicated nb:"+array[i]);
         return array[i];  //find the duplicated number
       }
     }
@@ -37,6 +40,7 @@ public class N51DuplicatedNbInArray {
     for(int i=0; i<numbers.length; i++) {
       while(numbers[i] != i) {
         if(numbers[i] == numbers[numbers[i]]) {
+          System.out.println("Found duplicated nb:"+numbers[i]);
           return numbers[i];
         }
         // swap numbers[i] with numbers[numbers[i]]
